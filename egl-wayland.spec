@@ -14,10 +14,12 @@ URL:		https://github.com/NVIDIA/egl-wayland
 Source0:	%{name}-%{version}-%{date}.tar.xz
 Source1:	10_nvidia_wayland.json
 BuildRequires:	meson
-BuildRequires:	pkgconfig(eglexternalplatform)
+BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
 BuildRequires:	pkgconfig(gl)
-BuildRequires:	pkgconfig(wayland)
+BuildRequires:	pkgconfig(wayland-server) >= 1.15.0
+BuildRequires:	pkgconfig(wayland-client) >= 1.15.0
+BuildRequires:	pkgconfig(wayland-scanner) >= 1.15.0
 
 # Required for directory ownership
 Requires:	libglvnd-egl
