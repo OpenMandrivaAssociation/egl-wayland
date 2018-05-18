@@ -1,28 +1,26 @@
 %global major 1
 %define libname %mklibname nvidia-egl-wayland %major
 %define devname %mklibname -d nvidia-egl-wayland
-%global commit  6f5f7d0d50287b810e9dec4718d3cf995fed809a
-%global date 20180201
-%global shortcommit0 %(c=%{commit}; echo ${c:0:7})
+%global date 20180518
 
 Name:		egl-wayland
 Version:	1.0.3
-Release:	1
+Release:	0.%{date}.1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT
-URL:		https://github.com/NVIDIA
-Source0:	%url/%{name}/archive/%{commit}.tar.gz#/%{name}-%{commit}.tar.gz
+URL:		https://github.com/NVIDIA/egl-wayland
+# git archive --format=tar --prefix=egl-wayland-1.0.3-$(date +%Y%m%d)/ HEAD | xz -vf > egl-wayland-1.0.3-$(date +%Y%m%d).tar.xz
+Source0:	%{name}-%{version}-%{date}.tar.xz
 Source1:	10_nvidia_wayland.json
 BuildRequires:	meson
-BuildRequires:	libtool
-BuildRequires:	eglexternalplatform-devel
+BuildRequires:	pkgconfig(eglexternalplatform)
 BuildRequires:	pkgconfig(egl)
-BuildRequires:	pkgconfig(GL)
+BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(wayland)
 
 # Required for directory ownership
-Requires:	libglvnd-egl%{?_isa}
+Requires:	libglvnd-egl
 
 %description
 %summary.
@@ -37,13 +35,13 @@ Group:		System/Libraries
 %package -n %{devname}
 Summary:	Wayland EGL External Platform library development package
 Group:		Development/C
-Requires:	%{libname}%{?_isa} = %{EVRD}
+Requires:	%{libname} = %{EVRD}
 
 %description -n %{devname}
 Wayland EGL External Platform library development package.
 
 %prep
-%autosetup -n %{name}-%{commit}
+%autosetup -n %{name}-%{version}-%{date}
 
 %build
 %meson
@@ -56,13 +54,13 @@ install -pm 0644 %{SOURCE1} %{buildroot}%{_datadir}/egl/egl_external_platform.d/
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
-%files -n %libname
+%files -n %{libname}
 %doc README.md
 %license COPYING
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 %{_datadir}/egl/egl_external_platform.d/10_nvidia_wayland.json
 
-%files -n %devname
+%files -n %{devname}
 %{_libdir}/libnvidia-egl-wayland.so
 %{_datadir}/pkgconfig/wayland-eglstream.pc
 %{_datadir}/pkgconfig/wayland-eglstream-protocols.pc
