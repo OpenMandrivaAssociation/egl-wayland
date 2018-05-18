@@ -5,7 +5,7 @@
 
 Name:		egl-wayland
 Version:	1.0.3
-Release:	0.%{date}.1
+Release:	0.%{date}.2
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT
@@ -22,7 +22,7 @@ BuildRequires:	pkgconfig(wayland-client) >= 1.15.0
 BuildRequires:	pkgconfig(wayland-scanner) >= 1.15.0
 
 # Required for directory ownership
-Requires:	libglvnd-egl
+Requires:	glvnd-egl
 
 %description
 %summary.
@@ -54,7 +54,6 @@ Wayland EGL External Platform library development package.
 install -m 0755 -d %{buildroot}%{_datadir}/egl/egl_external_platform.d/
 install -pm 0644 %{SOURCE1} %{buildroot}%{_datadir}/egl/egl_external_platform.d/
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
-
 
 %files -n %{libname}
 %doc README.md
