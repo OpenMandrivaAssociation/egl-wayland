@@ -13,7 +13,6 @@ URL:		https://github.com/NVIDIA/egl-wayland
 # git archive --format=tar --prefix=egl-wayland-1.0.3-$(date +%Y%m%d)/ HEAD | xz -vf > egl-wayland-1.0.3-$(date +%Y%m%d).tar.xz
 Source0:	%{name}-%{version}-%{date}.tar.xz
 Source1:	10_nvidia_wayland.json
-Patch0:		0001-meson-fix-RuntimeError.patch
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
@@ -21,7 +20,7 @@ BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(wayland-server) >= 1.15.0
 BuildRequires:	pkgconfig(wayland-client) >= 1.15.0
 BuildRequires:	pkgconfig(wayland-scanner) >= 1.15.0
-
+Requires:	%{libname} >= %{EVRD}
 # Required for directory ownership
 Requires:	glvnd-egl
 
