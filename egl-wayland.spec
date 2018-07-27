@@ -1,11 +1,11 @@
 %global major 1
 %define libname %mklibname nvidia-egl-wayland %major
 %define devname %mklibname -d nvidia-egl-wayland
-%global date 20180518
+%global date 20180727
 
 Name:		egl-wayland
-Version:	1.0.3
-Release:	0.%{date}.2
+Version:	1.0.5
+Release:	0.%{date}.1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT
@@ -13,6 +13,7 @@ URL:		https://github.com/NVIDIA/egl-wayland
 # git archive --format=tar --prefix=egl-wayland-1.0.3-$(date +%Y%m%d)/ HEAD | xz -vf > egl-wayland-1.0.3-$(date +%Y%m%d).tar.xz
 Source0:	%{name}-%{version}-%{date}.tar.xz
 Source1:	10_nvidia_wayland.json
+Patch0:		0001-meson-fix-RuntimeError.patch
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
