@@ -1,10 +1,10 @@
 %global major 1
 %define libname %mklibname nvidia-egl-wayland %major
 %define devname %mklibname -d nvidia-egl-wayland
-%global date 20180727
+%global date 20180914
 
 Name:		egl-wayland
-Version:	1.0.5
+Version:	1.1.0
 Release:	0.%{date}.1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
