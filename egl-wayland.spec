@@ -22,7 +22,7 @@ BuildRequires:	pkgconfig(wayland-client) >= 1.15.0
 BuildRequires:	pkgconfig(wayland-scanner) >= 1.15.0
 Requires:	%{libname} >= %{EVRD}
 # Required for directory ownership
-Requires:	glvnd-egl
+Requires:	libglvnd-egl
 
 %description
 %summary.
