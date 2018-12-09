@@ -25,10 +25,10 @@ Requires:	%{libname} >= %{EVRD}
 Requires:	libglvnd-egl
 
 %description
-%summary.
+%{summary}.
 
 %package -n %{libname}
-Summary:	%{summary{
+Summary:	%{summary}
 Group:		System/Libraries
 
 %description -n %{libname}
