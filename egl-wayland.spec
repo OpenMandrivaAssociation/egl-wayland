@@ -1,17 +1,17 @@
 %global major 1
 %define libname %mklibname nvidia-egl-wayland %major
 %define devname %mklibname -d nvidia-egl-wayland
-%global date 20180914
+%global date %nil
 
 Name:		egl-wayland
-Version:	1.1.0
-Release:	0.%{date}.1
+Version:	1.1.1
+Release:	1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT
 URL:		https://github.com/NVIDIA/egl-wayland
 # git archive --format=tar --prefix=egl-wayland-1.0.3-$(date +%Y%m%d)/ HEAD | xz -vf > egl-wayland-1.0.3-$(date +%Y%m%d).tar.xz
-Source0:	%{name}-%{version}-%{date}.tar.xz
+Source0:	%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
@@ -28,11 +28,11 @@ Requires:	libglvnd-egl
 %summary.
 
 %package -n %{libname}
-Summary:	%summary
+Summary:	%{summary{
 Group:		System/Libraries
 
 %description -n %{libname}
-%summary.
+%{summary}.
 
 %package -n %{devname}
 Summary:	Wayland EGL External Platform library development package
@@ -43,7 +43,7 @@ Requires:	%{libname} = %{EVRD}
 Wayland EGL External Platform library development package.
 
 %prep
-%autosetup -n %{name}-%{version}-%{date}
+%autosetup -p1
 
 %build
 %meson
