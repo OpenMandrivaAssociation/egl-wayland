@@ -13,6 +13,7 @@ URL:		https://github.com/NVIDIA/egl-wayland
 # git archive --format=tar --prefix=egl-wayland-1.0.3-$(date +%Y%m%d)/ HEAD | xz -vf > egl-wayland-1.0.3-$(date +%Y%m%d).tar.xz
 Source0:	%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
+Patch0:		0000-Fix-several-warnings.patch
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
