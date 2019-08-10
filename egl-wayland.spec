@@ -44,6 +44,8 @@ Wayland EGL External Platform library development package.
 
 %prep
 %autosetup -p1
+# remove Werror
+sed -i '8d' src/meson.build
 
 %build
 %meson
