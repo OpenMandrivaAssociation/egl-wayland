@@ -1,0 +1,25 @@
+From 1f0230f5c41722d8ec0df2828e97188ffd0a11eb Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Fabian=20M=C3=B6ller?= <fabianm88@gmail.com>
+Date: Wed, 27 Nov 2019 12:28:14 +0100
+Subject: [PATCH] Add eglmesaext.h include in wayland-eglsurface.c
+
+eglmesaext.h was previously included via eglext.h but mesa stopped providing GLVND headers in [1].
+Without eglmesaext.h EGL_WAYLAND_Y_INVERTED_WL is not defined.
+
+[1]: https://gitlab.freedesktop.org/mesa/mesa/commit/8355658fa857536d948773b361c5ede770e637a3
+---
+ src/wayland-eglsurface.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/wayland-eglsurface.c b/src/wayland-eglsurface.c
+index 01c9cb3..45736b0 100644
+--- a/src/wayland-eglsurface.c
++++ b/src/wayland-eglsurface.c
+@@ -37,6 +37,7 @@
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ #include <fcntl.h>
++#include <EGL/eglmesaext.h>
+ 
+ #define WL_EGL_WINDOW_DESTROY_CALLBACK_SINCE 3
+ 
