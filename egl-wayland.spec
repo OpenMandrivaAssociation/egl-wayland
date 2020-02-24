@@ -5,7 +5,7 @@
 
 Name:		egl-wayland
 Version:	1.1.4
-Release:	1
+Release:	2
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT
