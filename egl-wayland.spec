@@ -13,6 +13,9 @@ URL:		https://github.com/NVIDIA/egl-wayland
 # git archive --format=tar --prefix=egl-wayland-1.0.3-$(date +%Y%m%d)/ HEAD | xz -vf > egl-wayland-1.0.3-$(date +%Y%m%d).tar.xz
 Source0:	%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
+# (tpg) https://github.com/NVIDIA/egl-wayland/issues/25
+# this is temporary solution, prolly it will be fidex differently by upstream
+Patch0:	https://src.fedoraproject.org/rpms/egl-wayland/raw/master/f/add_missing_includes.patch
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
