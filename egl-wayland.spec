@@ -15,7 +15,9 @@ Source0:	%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
 # (tpg) https://github.com/NVIDIA/egl-wayland/issues/25
 # this is temporary solution, prolly it will be fidex differently by upstream
-Patch0:	https://src.fedoraproject.org/rpms/egl-wayland/raw/master/f/add_missing_includes.patch
+Patch0:		https://src.fedoraproject.org/rpms/egl-wayland/raw/master/f/add_missing_includes.patch
+BuildRequires:	egl-devel
+### above is also required for patch 0
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
