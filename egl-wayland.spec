@@ -5,7 +5,7 @@
 
 Name:		egl-wayland
 Version:	1.1.4
-Release:	2
+Release:	3
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT
@@ -14,10 +14,7 @@ URL:		https://github.com/NVIDIA/egl-wayland
 Source0:	%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
 # (tpg) https://github.com/NVIDIA/egl-wayland/issues/25
-# this is temporary solution, prolly it will be fidex differently by upstream
-Patch0:		https://src.fedoraproject.org/rpms/egl-wayland/raw/master/f/add_missing_includes.patch
-BuildRequires:	egl-devel
-### above is also required for patch 0
+Patch0:		egl-wayland-1.1.4-define-EGL_WAYLAND_Y_INVERTED_WL.patch
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
