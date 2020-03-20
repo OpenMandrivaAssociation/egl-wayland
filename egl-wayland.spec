@@ -5,7 +5,7 @@
 
 Name:		egl-wayland
 Version:	1.1.4
-Release:	3
+Release:	4
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT
@@ -58,6 +58,8 @@ sed -i '8d' src/meson.build
 install -m 0755 -d %{buildroot}%{_datadir}/egl/egl_external_platform.d/
 install -pm 0644 %{SOURCE1} %{buildroot}%{_datadir}/egl/egl_external_platform.d/
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
+
+%files
 
 %files -n %{libname}
 %doc README.md
