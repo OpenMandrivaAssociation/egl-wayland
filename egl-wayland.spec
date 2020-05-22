@@ -4,17 +4,15 @@
 %global date %nil
 
 Name:		egl-wayland
-Version:	1.1.4
-Release:	4
+Version:	1.1.5
+Release:	1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
-License:	MIT
+License:	MIT1.1.5
 URL:		https://github.com/NVIDIA/egl-wayland
 # git archive --format=tar --prefix=egl-wayland-1.0.3-$(date +%Y%m%d)/ HEAD | xz -vf > egl-wayland-1.0.3-$(date +%Y%m%d).tar.xz
 Source0:	%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
-# (tpg) https://github.com/NVIDIA/egl-wayland/issues/25
-Patch0:		egl-wayland-1.1.4-define-EGL_WAYLAND_Y_INVERTED_WL.patch
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
