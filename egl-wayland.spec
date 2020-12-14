@@ -67,5 +67,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 %files -n %{devname}
 %{_libdir}/libnvidia-egl-wayland.so
+%{_libdir}/pkgconfig/*.pc
 %{_datadir}/pkgconfig/*.pc
 %{_datadir}/wayland-eglstream/
