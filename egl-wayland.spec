@@ -5,7 +5,7 @@
 
 Name:		egl-wayland
 Version:	1.1.6
-Release:	1
+Release:	2
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT1.1.5
@@ -30,6 +30,7 @@ Requires:	libglvnd-egl
 %package -n %{libname}
 Summary:	%{summary}
 Group:		System/Libraries
+Provides:	%{name}
 
 %description -n %{libname}
 %{summary}.
