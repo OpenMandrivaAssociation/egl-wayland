@@ -4,8 +4,8 @@
 %global date %nil
 
 Name:		egl-wayland
-Version:	1.1.6
-Release:	2
+Version:	1.1.7
+Release:	1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT1.1.5
