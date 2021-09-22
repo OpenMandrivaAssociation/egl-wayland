@@ -4,7 +4,7 @@
 %global date %nil
 
 Name:		egl-wayland
-Version:	1.1.7
+Version:	1.1.8
 Release:	1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
@@ -20,6 +20,7 @@ BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(wayland-server) >= 1.15.0
 BuildRequires:	pkgconfig(wayland-client) >= 1.15.0
 BuildRequires:	pkgconfig(wayland-scanner) >= 1.15.0
+BuildRequires:	pkgconfig(wayland-protocols)
 Requires:	%{libname} >= %{EVRD}
 # Required for directory ownership
 Requires:	libglvnd-egl
