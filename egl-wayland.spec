@@ -5,7 +5,7 @@
 
 Name:		egl-wayland
 Version:	1.1.9
-Release:	1
+Release:	2
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT1.1.5
@@ -13,6 +13,7 @@ URL:		https://github.com/NVIDIA/egl-wayland
 # git archive --format=tar --prefix=egl-wayland-1.0.3-$(date +%Y%m%d)/ HEAD | xz -vf > egl-wayland-1.0.3-$(date +%Y%m%d).tar.xz
 Source0:	%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
+Source2:	15_nvidia_gbm.json
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
@@ -56,7 +57,7 @@ sed -i '8d' src/meson.build
 %install
 %meson_install
 install -m 0755 -d %{buildroot}%{_datadir}/egl/egl_external_platform.d/
-install -pm 0644 %{SOURCE1} %{buildroot}%{_datadir}/egl/egl_external_platform.d/
+install -pm 0644 %{SOURCE1} %{SOURCE2} %{buildroot}%{_datadir}/egl/egl_external_platform.d/
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 %files
@@ -66,6 +67,7 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %license COPYING
 %{_libdir}/*.so.%{major}*
 %{_datadir}/egl/egl_external_platform.d/10_nvidia_wayland.json
+%{_datadir}/egl/egl_external_platform.d/15_nvidia_gbm.json
 
 %files -n %{devname}
 %{_libdir}/libnvidia-egl-wayland.so
