@@ -5,7 +5,7 @@
 
 Name:		egl-wayland
 Version:	1.1.9
-Release:	2
+Release:	3
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT1.1.5
@@ -14,6 +14,10 @@ URL:		https://github.com/NVIDIA/egl-wayland
 Source0:	%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
 Source2:	15_nvidia_gbm.json
+Patch0:	https://github.com/NVIDIA/egl-wayland/commit/d4937adc5cd04ac7df98fc5616e40319fb52fdee.patch
+Patch1:	https://github.com/NVIDIA/egl-wayland/commit/daab8546eca8428543a4d958a2c53fc747f70672.patch
+Patch2:	https://github.com/NVIDIA/egl-wayland/commit/582b2d345abaa0e313cf16c902e602084ea59551.patch
+Patch3:	https://github.com/NVIDIA/egl-wayland/commit/ddaa27209a8149c1960c70799c87151206401bbc.patch
 BuildRequires:	meson
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
 BuildRequires:	pkgconfig(egl)
