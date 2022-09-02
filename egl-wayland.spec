@@ -4,7 +4,7 @@
 %global date %nil
 
 Name:		egl-wayland
-Version:	1.1.10
+Version:	1.1.11
 Release:	1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
