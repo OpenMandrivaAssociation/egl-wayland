@@ -4,8 +4,8 @@
 %global date %nil
 
 Name:		egl-wayland
-Version:	1.1.11
-Release:	4
+Version:	1.1.12
+Release:	1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
 License:	MIT1.1.5
@@ -14,9 +14,6 @@ URL:		https://github.com/NVIDIA/egl-wayland
 Source0:	%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
 Source2:	15_nvidia_gbm.json
-# Fix crash in Firefox and Thunderbird on Wayland. Patch from Fedora.
-Patch0:		https://patch-diff.githubusercontent.com/raw/NVIDIA/egl-wayland/pull/79.patch
-Patch1:		https://github.com/NVIDIA/egl-wayland/commit/30c5a951a849f835acc9f11ea4ca4e1d3380b7eb.patch
 BuildRequires:	meson
 BuildRequires:	pkgconfig(libdrm)
 BuildRequires:	pkgconfig(eglexternalplatform) >= 1.0
