@@ -4,14 +4,13 @@
 %global date %nil
 
 Name:		egl-wayland
-Version:	1.1.18
+Version:	1.1.19
 Release:	1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library
-License:	MIT1.1.5
+License:	MIT
 URL:		https://github.com/NVIDIA/egl-wayland
-# git archive --format=tar --prefix=egl-wayland-1.0.3-$(date +%Y%m%d)/ HEAD | xz -vf > egl-wayland-1.0.3-$(date +%Y%m%d).tar.xz
-Source0:	%{name}-%{version}.tar.gz
+Source0:	https://github.com/NVIDIA/egl-wayland/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	10_nvidia_wayland.json
 Source2:	15_nvidia_gbm.json
 
