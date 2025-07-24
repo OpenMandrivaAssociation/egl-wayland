@@ -14,7 +14,7 @@
 
 Name:		egl-wayland
 Version:	1.1.19
-Release:	2
+Release:	3
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library for nvidia GPUs
 License:	MIT
@@ -30,11 +30,13 @@ BuildRequires:	pkgconfig(wayland-server) >= 1.15.0
 BuildRequires:	pkgconfig(wayland-client) >= 1.15.0
 BuildRequires:	pkgconfig(wayland-scanner) >= 1.15.0
 BuildRequires:	pkgconfig(wayland-protocols)
+BuildRequires:	pkgconfig(libffi)
 %if %{with compat32}
 BuildRequires:	devel(libdrm)
 BuildRequires:	devel(libEGL)
 BuildRequires:	devel(libwayland-server)
 BuildRequires:	devel(libwayland-client)
+BuildRequires:	devel(libffi)
 %endif
 Requires:	%{libname} >= %{EVRD}
 # Required for directory ownership
