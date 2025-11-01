@@ -13,8 +13,8 @@
 %endif
 
 Name:		egl-wayland
-Version:	1.1.19
-Release:	3
+Version:	1.1.20
+Release:	1
 Group:		System/Libraries
 Summary:	Wayland EGL External Platform library for nvidia GPUs
 License:	MIT
