@@ -38,6 +38,11 @@ BuildRequires:	devel(libwayland-server)
 BuildRequires:	devel(libwayland-client)
 BuildRequires:	devel(libffi)
 BuildRequires:  atomic-devel
+BuildRequires:	cross-i686-openmandriva-linux-gnu-libc
+BuildRequires:	cross-i686-openmandriva-linux-gnu-gcc
+BuildRequires:	cross-i686-openmandriva-linux-gnu-binutils
+BuildRequires:	cross-i686-openmandriva-linux-gnu-kernel-headers
+BuildRequires:	cross-i686-openmandriva-linux-gnu-clang
 %endif
 Requires:	%{libname} >= %{EVRD}
 # Required for directory ownership
